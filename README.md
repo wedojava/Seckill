@@ -26,7 +26,7 @@ Enjoy it! Good luck!
 
 ### Install Selenium
 ```python
-pip3 install selenium
+pip3 install selenium --user
 ```
 
 ### Install ChromeDriver
