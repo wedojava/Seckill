@@ -6,19 +6,23 @@ This code just pass test on MacOS 14. Windows and Linux guys should test it befo
 
 Enjoy it! Good luck!
 
-## # Preparetion
-
-1. Python3
-2. Selenium
-3. ChromeDriver
-
-> If your Chrome version equal to `86.0.4240.111`, just use these bin files I provide.
+---
 
 ## Usage
 
 - Mac OS: `python3 ./seckill_darwin.py`
 - Windows: `py .\seckill_windows.py`
 - Linux: `python3 ./seckill_linux.py`
+
+---
+
+## Steps
+
+1. Python3
+2. Selenium
+3. ChromeDriver
+
+> If your Chrome version equal to `86.0.4240.111`, just use these bin files I provide.
 
 ### Install Selenium
 ```python
@@ -54,3 +58,12 @@ Windows: `<your python root folder>\\Scripts`
 Mac OS: `/usr/bin`
 
 **Notice:**  On mac, it can't copy anything to the folder, so, copy it to any place your python can invoke it.
+
+### Modify Python Code
+
+Last line: `buy('2020-11-01 00:00:00')`
+
+modify it for you need.
+
+
+EOF
