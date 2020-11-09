@@ -12,7 +12,7 @@ wait = WebDriverWait(browser, 10)  # 超时时长为10s
 
 
 def login():
-    browser.get("https://cart.taobao.com/cart.htm")
+    browser.get("https://yushou.jd.com/member/qualificationList.action")
     print("请手动勾选需要购买的商品, 1分钟后开抢!")
     time.sleep(60)
 
@@ -24,13 +24,12 @@ def buy(kill_time):
         if now >= kill_time:
             while True:
                 try:
-                    # 点击结算按钮
-                    if browser.find_element_by_id("J_Go"):
-                        browser.find_element_by_id("J_Go").click()
-                        print("结算成功，准备提交订单")
+                    #  if browser.find_element_by_id("J_Go"):
+                    #      browser.find_element_by_id("J_Go").click()
+                    #      print("结算成功，准备提交订单")
                     # 点击提交订单按钮
-                    if browser.find_element_by_link_text('提交订单'):
-                        browser.find_element_by_link_text('提交订单').click()
+                    if browser.find_element_by_link_text('去结算'):
+                        browser.find_element_by_link_text('去结算').click()
                         print("抢购成功，请尽快付款")
                         return
                 except:
@@ -47,4 +46,4 @@ def buy(kill_time):
 
 if __name__ == "__main__":
     login()
-    buy('2020-11-11 00:00:00')
+    buy('2020-11-10 10:00:00')
