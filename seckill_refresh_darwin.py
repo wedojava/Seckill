@@ -18,8 +18,8 @@ def login():
 
 def buy(kill_time):
     i = 0
+    print("开始循环...")
     while True:
-        print("开始循环...")
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
         # 对比时间，时间到的话就点击结算
         if now >= kill_time:
@@ -35,16 +35,16 @@ def buy(kill_time):
                                 browser.find_element_by_id("J_Go").click()
                                 print("结算成功，准备提交订单")
                     # 提交订单,然后进入支付页
-                    if browser.find_element_by_link_text('提交订单'):
-                        browser.find_element_by_link_text('提交订单').click()
-                        print("抢购成功，请尽快付款")
-                        return
+                    #  if browser.find_element_by_link_text('提交订单'):
+                    #      browser.find_element_by_link_text('提交订单').click()
+                    #      print("抢购成功，请尽快付款")
+                        #  return
                 except:
                     #  print("browser error occur!")
                     pass
                 i += 1
-                if i > 500:
-                    print("已尝试 500 次,退出!")
+                if i > 1000:
+                    print(f"已尝试 {i+1} 次,退出!")
                     return
 
 
