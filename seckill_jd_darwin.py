@@ -21,6 +21,8 @@ def buy(kill_time):
     while True:
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
         # 对比时间，时间到的话就点击结算
+        if now == kill_time:
+            browser.refresh()  # 刷新页面
         if now >= kill_time:
             while True:
                 try:
@@ -28,8 +30,12 @@ def buy(kill_time):
                     #      browser.find_element_by_id("J_Go").click()
                     #      print("结算成功，准备提交订单")
                     # 点击提交订单按钮
-                    if browser.find_element_by_link_text('去结算'):
-                        browser.find_element_by_link_text('去结算').click()
+                    if browser.find_element_by_link_text('抢购'):
+                        browser.find_element_by_link_text('抢购').click()
+                        print("抢购成功，请尽快付款")
+                        return
+                    if browser.find_element_by_link_text('立即抢购'):
+                        browser.find_element_by_link_text('立即抢购').click()
                         print("抢购成功，请尽快付款")
                         return
                 except:
@@ -46,4 +52,4 @@ def buy(kill_time):
 
 if __name__ == "__main__":
     login()
-    buy('2020-11-10 10:00:00')
+    buy('2020-11-10 10:41:00')
