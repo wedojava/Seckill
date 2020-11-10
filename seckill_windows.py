@@ -47,4 +47,4 @@ def buy(kill_time):
 
 if __name__ == "__main__":
     login()
-    buy('2020-11-01 00:00:00')
+    buy('2020-11-11 00:00:00')
